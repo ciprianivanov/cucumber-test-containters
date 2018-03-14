@@ -8,4 +8,49 @@
     <artifactId>com.cucumber.container</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <!-- Testing -->
+        <junit.version>4.12</junit.version>
+        <cucumber.version>2.4.0</cucumber.version>
+        <test-containers.version>1.6.0</test-containers.version>
+
+        <!-- Plugins -->
+        <compiler.plugin.version>3.7.0</compiler.plugin.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compiler.plugin.version}</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>oracle-xe</artifactId>
+            <version>${test-containers.version}</version>
+        </dependency>
+    </dependencies>
 </project>
