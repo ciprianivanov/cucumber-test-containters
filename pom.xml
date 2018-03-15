@@ -8,11 +8,37 @@
     <artifactId>com.cucumber.container</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <repositories>
+        <repository>
+            <id>maven.oracle.com</id>
+            <name>oracle-maven-repo</name>
+            <url>https://maven.oracle.com</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven.oracle.com</id>
+            <name>oracle-maven-repo</name>
+            <url>https://maven.oracle.com</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+
     <properties>
         <!-- Testing -->
         <junit.version>4.12</junit.version>
         <cucumber.version>2.4.0</cucumber.version>
         <test-containers.version>1.6.0</test-containers.version>
+        <oracle.jdbc.version>12.2.0.1</oracle.jdbc.version>
 
         <!-- Plugins -->
         <compiler.plugin.version>3.7.0</compiler.plugin.version>
@@ -51,6 +77,18 @@
             <groupId>org.testcontainers</groupId>
             <artifactId>oracle-xe</artifactId>
             <version>${test-containers.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>testcontainers</artifactId>
+            <version>${test-containers.version}</version>
+        </dependency>
+
+        <!-- Configure access to Maven Oracle repository-->
+        <dependency>
+            <groupId>com.oracle.jdbc</groupId>
+            <artifactId>ojdbc8</artifactId>
+            <version>${oracle.jdbc.version}</version>
         </dependency>
     </dependencies>
 </project>
